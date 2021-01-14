@@ -1,32 +1,38 @@
 package kiss;
 
-public class IntegrationHandlerFactory {
+public class IntegrationHandlerFactory  {
 
-    private static final String EMAIL = "abc";
-    private static final String SMS = "dce";
-    private static final String PUSH = "glk";
-    private final EmailIntegrationHandler emailHandler;
-    private final SMSIntegrationHandler smsHandler;
-    private final PushIntegrationHandler pushHandler;
 
-    public IntegrationHandlerFactory(EmailIntegrationHandler emailHandler,
-                                     SMSIntegrationHandler smsHandler,
-                                     PushIntegrationHandler pushHandler) {
-        this.emailHandler = emailHandler;
-        this.smsHandler = smsHandler;
-        this.pushHandler = pushHandler;
+    private final IntegrationHandler integrationHandler;
+
+
+    public IntegrationHandlerFactory(IntegrationHandler integrationHandler) {
+        this.integrationHandler = integrationHandler;
     }
 
-    public IntegrationHandler getHandlerFor(String integration) {
-        if (EMAIL.equals(integration)) {
-            return emailHandler;
-        } else if (SMS.equals(integration)) {
-            return smsHandler;
-        } else if (PUSH.equals(integration)) {
-            return pushHandler;
-        } else {
-            throw new IllegalArgumentException("No handler found for integration: " + integration);
-        }
 
+    public IntegrationHandler getHandlerFor() {
+
+//        System.out.println("PushIntegrationHandler");
+        return integrationHandler;
+    }
+
+    public static void main(String[] args) {
+        PushIntegrationHandler pushIntegrationHandler= new PushIntegrationHandler();
+        EmailIntegrationHandler  emailIntegrationHandler = new EmailIntegrationHandler();
+        System.out.println("0");
+        IntegrationHandlerFactory push = new IntegrationHandlerFactory(pushIntegrationHandler);
+        System.out.println("1");
+        push.integrationHandler.getHandlerFor();
+        System.out.println("2");
+        System.out.println(push.getHandlerFor());
+
+        push.integrationHandler.show();
+        IntegrationHandlerFactory email = new IntegrationHandlerFactory(emailIntegrationHandler);
+        email.integrationHandler.getHandlerFor();
+
+        System.out.println(email.getHandlerFor());
+
+        email.integrationHandler.show();
     }
 }

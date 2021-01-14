@@ -35,13 +35,5 @@ public class Student {
         this.age = age;
     }
 
-    public boolean saveToDatabase() throws SQLException {
-        String url = "jdbc:msql://xxx.yyyy.zzz.lll:3306/Demo";
-        Connection conn = DriverManager.getConnection(url, "", "");
-        Statement st = conn.createStatement();
-        st.executeUpdate("INSERT INTO Customers " +
-                "VALUES (1001, 'Simpson', 'Mr.', 'Springfield', 2001)");
 
-        return true;
-    }
 }

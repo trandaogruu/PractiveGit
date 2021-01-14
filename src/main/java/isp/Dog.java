@@ -6,8 +6,4 @@ public class Dog implements Animal {
         System.out.println("dog can walk");
     }
 
-    @Override
-    public void fly() {
-        throw new UnsupportedOperationException();
-    }
 }
