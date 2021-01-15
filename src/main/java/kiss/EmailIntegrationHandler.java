@@ -2,13 +2,13 @@ package kiss;
 
 
 public class EmailIntegrationHandler implements IntegrationHandler {
-    private  EmailIntegrationHandler emailHandler;
+
 
     @Override
     public IntegrationHandler getHandlerFor() {
 
         System.out.println("EmailIntegrationHandler");
-        return emailHandler;
+        return new EmailIntegrationHandler();
     }
 
     @Override

@@ -1,5 +1,5 @@
 package isp;
 
-public interface BirdAnimal extends Animal{
+public interface BirdAnimal {
     public void fly();
 }

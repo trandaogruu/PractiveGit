@@ -1,15 +1,14 @@
 package single.responsibility.cohension.ex1;
 
 public class SquareCalculator {
-    int size = 5;
 
-    public int calculateArea() {
+    public int calculateArea(Square square) {
 
-        return size * size;
+        return square.getSize() * square.getSize();
     }
 
-    public int calculateP() {
-        return size * 4;
+    public int calculateP(Square square) {
+        return square.getSize() * 4;
     }
 
 }

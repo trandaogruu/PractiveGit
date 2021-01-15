@@ -2,12 +2,11 @@ package kiss;
 
 public class SMSIntegrationHandler implements IntegrationHandler {
 
-    private  SMSIntegrationHandler smsHandler;
 
     @Override
     public IntegrationHandler getHandlerFor() {
         System.out.println("SMSIntegrationHandler");
-        return smsHandler;
+        return new SMSIntegrationHandler();
     }
 
     @Override

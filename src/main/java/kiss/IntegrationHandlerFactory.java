@@ -34,5 +34,9 @@ public class IntegrationHandlerFactory  {
         System.out.println(email.getHandlerFor());
 
         email.integrationHandler.show();
+        System.out.println("version2");
+
+
+
     }
 }
