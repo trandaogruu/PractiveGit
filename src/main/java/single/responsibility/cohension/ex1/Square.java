@@ -1,18 +1,34 @@
 package single.responsibility.cohension.ex1;
 
-public class Square {
+public class Square extends shape {
 
     private int size;
 
-    public Square(int size) {
-        this.size = size;
+    @Override
+    public int calculateArea(int edge) {
+        return edge * edge;
     }
 
-    public int getSize() {
-        return size;
+    @Override
+    public int calculateP(int edge) {
+        return edge * 4;
     }
 
-    public void setSize(int size) {
-        this.size = size;
+    @Override
+    public void draw() {
+        super.draw();
     }
+
+    @Override
+    public void rotate() {
+        super.rotate();
+    }
+
+    public static void main(String[] args) {
+        Square square = new Square();
+        System.out.println(square.calculateArea(10));
+    }
+
 }
+
+
