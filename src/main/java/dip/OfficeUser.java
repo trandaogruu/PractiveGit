@@ -1,20 +1,22 @@
 package dip;
 
+import openclosed.ex0.CreatePost;
 import openclosed.ex0.IPost;
 import openclosed.ex0.Post;
 import single.responsibility.cohension.ex3.Database;
 
 public class OfficeUser {
-    private IPost iPost;
+    private CreatePost createPost;
 
-    public OfficeUser(IPost iPost) {
-        this.iPost = iPost;
+
+    public OfficeUser(CreatePost createPost) {
+        this.createPost = createPost;
     }
 
     public void publishNewPost() {
         Database db = new Database();
         String postMessage = "example message";
 
-        iPost.CreatePost(db, postMessage);
+        createPost.CreatePost(db, postMessage);
     }
 }
